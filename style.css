@@ -1,0 +1,891 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050609;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --black: #050609;
+    --dark: #0b0d14;
+    --blue: #168cff;
+    --light-blue: #66c7ff;
+    --pink: #ff4da6;
+    --white: #ffffff;
+    --gray: #9297a5;
+}
+
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+    position: fixed;
+
+    color: var(--blue);
+
+    font-size: 25px;
+
+    top: 15%;
+    left: 10%;
+
+    opacity: 0.6;
+
+    animation: starMove 3s infinite ease-in-out;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.star2 {
+    top: 70%;
+    left: 85%;
+
+    color: var(--pink);
+
+    animation-delay: 1s;
+}
+
+.star3 {
+    top: 35%;
+    left: 90%;
+
+    animation-delay: 2s;
+}
+
+.star4 {
+    top: 80%;
+    left: 12%;
+
+    animation-delay: 0.5s;
+}
+
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1166aa33,
+            transparent 45%
+        ),
+        #050609;
+}
+
+.intro-content {
+    max-width: 550px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.mini {
+    color: var(--blue);
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    margin-bottom: 35px;
+}
+
+.music-icon {
+    font-size: 65px;
+
+    color: var(--pink);
+
+    margin-bottom: 20px;
+
+    animation: musicFloat 2s infinite ease-in-out;
+}
+
+.intro h1 {
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.intro h1 span {
+    display: block;
+
+    color: var(--blue);
+
+    text-shadow:
+        0 0 15px #168cff99;
+}
+
+.intro-text {
+    color: var(--gray);
+
+    margin-bottom: 30px;
+
+    line-height: 1.7;
+}
+
+.intro button {
+    margin-bottom: 20px;
+}
+
+.hint {
+    color: #555b68;
+
+    font-size: 12px;
+}
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: 1px solid var(--blue);
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 20px #168cff33;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px #168cff88;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+
+/* =========================
+   MAIN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+#main {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #168cff18,
+            transparent 35%
+        ),
+        #050609;
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.badge {
+    border: 1px solid #168cff66;
+
+    color: var(--light-blue);
+
+    padding: 8px 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 13vw, 110px);
+
+    line-height: 0.85;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--blue);
+
+    text-shadow:
+        0 0 20px #168cff77;
+}
+
+.hero h2 {
+    margin-top: 25px;
+
+    font-size: 30px;
+
+    color: var(--pink);
+}
+
+.hero p {
+    margin-top: 15px;
+
+    color: var(--gray);
+}
+
+.scroll {
+    margin-top: 80px;
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+}
+
+
+
+/* =========================
+   KPOP CARD
+========================= */
+
+.kpop-card {
+    min-height: 300px;
+
+    padding: 35px;
+
+    border: 1px solid #168cff66;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c101b,
+            #08090e
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 50px #168cff15;
+}
+
+.kpop-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #168cff22;
+
+    right: -70px;
+    bottom: -70px;
+
+    filter: blur(5px);
+}
+
+.album-label {
+    color: var(--pink);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 50px;
+}
+
+.kpop-card h2 {
+    font-size: 35px;
+
+    letter-spacing: 2px;
+}
+
+.kpop-card p {
+    color: var(--gray);
+
+    line-height: 1.8;
+
+    margin-top: 20px;
+}
+
+.stars-line {
+    color: var(--blue);
+
+    margin-top: 30px;
+
+    letter-spacing: 8px;
+}
+
+
+
+/* =========================
+   NORMAL CARD
+========================= */
+
+.card {
+    background: #0b0d14;
+
+    border: 1px solid #ffffff12;
+
+    padding: 35px;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 50px #00000066;
+}
+
+.card-number {
+    color: var(--blue);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 27px;
+
+    margin-bottom: 25px;
+}
+
+.card p {
+    color: #aeb2bd;
+
+    line-height: 1.8;
+
+    margin: 15px 0;
+}
+
+.card strong {
+    color: var(--pink);
+}
+
+
+
+/* =========================
+   SCHOOL
+========================= */
+
+.subject {
+    margin: 25px 0;
+}
+
+.subject span {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.bar {
+    height: 6px;
+
+    background: #1c202b;
+
+    margin: 10px 0;
+
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+
+    width: 80%;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 10px var(--pink);
+}
+
+.bangla .bar div {
+    width: 70%;
+}
+
+.english .bar div {
+    width: 100%;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 10px var(--blue);
+}
+
+.subject small {
+    color: #777d89;
+}
+
+.school-message {
+    text-align: center;
+
+    color: var(--pink) !important;
+
+    margin-top: 30px !important;
+}
+
+
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz-option {
+    display: block;
+
+    width: 100%;
+
+    margin: 12px 0;
+
+    text-align: left;
+
+    background: #10131c;
+
+    border: 1px solid #ffffff18;
+
+    box-shadow: none;
+}
+
+.quiz-option:hover {
+    border-color: var(--pink);
+
+    background: #15101a;
+}
+
+#quizResult {
+    color: var(--blue);
+
+    font-weight: bold;
+
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+
+/* =========================
+   RAMEN
+========================= */
+
+.ramen-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #0c0e15;
+
+    border-left: 3px solid var(--pink);
+
+    padding: 20px;
+}
+
+.ramen-icon {
+    font-size: 50px;
+}
+
+.ramen-mini h3 {
+    color: white;
+
+    margin-bottom: 5px;
+}
+
+.ramen-mini p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake-section {
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.cake {
+    width: 180px;
+
+    height: 140px;
+
+    position: relative;
+
+    margin: auto auto 30px;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 10px;
+
+    width: 160px;
+
+    height: 80px;
+
+    background: #542719;
+
+    border-radius: 12px 12px 20px 20px;
+
+    box-shadow:
+        inset 0 15px #713923,
+        0 10px 30px #000;
+}
+
+.chocolate {
+    position: absolute;
+
+    z-index: 2;
+
+    font-size: 55px;
+
+    left: 55px;
+
+    top: 25px;
+}
+
+.candle {
+    position: absolute;
+
+    z-index: 3;
+
+    font-size: 38px;
+
+    left: 72px;
+
+    top: -5px;
+
+    animation: candle 0.6s infinite alternate;
+}
+
+.cake-section h2 {
+    color: var(--pink);
+
+    margin-bottom: 10px;
+}
+
+.cake-section p {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+#wishMessage {
+    color: var(--blue);
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+
+
+/* =========================
+   SECRET
+========================= */
+
+.secret-card {
+    text-align: center;
+
+    padding: 50px 25px;
+
+    border: 1px dashed #ff4da655;
+
+    background: #0a0a0f;
+}
+
+.secret-card > p:first-child {
+    color: var(--pink);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.secret-card h2 {
+    margin-bottom: 25px;
+}
+
+.secret-card button {
+    background: transparent;
+
+    border-color: var(--pink);
+
+    color: var(--pink);
+}
+
+#secretResult {
+    margin-top: 25px;
+
+    color: var(--blue);
+
+    min-height: 25px;
+}
+
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.final-stars {
+    color: var(--blue);
+
+    letter-spacing: 10px;
+
+    font-size: 20px;
+
+    margin-bottom: 30px;
+}
+
+.final > p:first-of-type {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+.final h1 {
+    font-size: clamp(55px, 13vw, 100px);
+
+    line-height: 0.9;
+}
+
+.final h1 span {
+    display: block;
+
+    color: var(--pink);
+
+    text-shadow:
+        0 0 20px #ff4da666;
+}
+
+.final-text {
+    color: #858a97;
+
+    line-height: 2;
+
+    margin: 30px 0;
+}
+
+.final-heart {
+    font-size: 50px;
+
+    animation: heartbeat 1.3s infinite;
+}
+
+.final h2 {
+    margin-top: 25px;
+
+    color: var(--blue);
+}
+
+.signature {
+    color: #555;
+
+    font-size: 12px;
+
+    margin-top: 20px;
+}
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes musicFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+@keyframes candle {
+
+    from {
+        transform: rotate(-3deg);
+    }
+
+    to {
+        transform: rotate(3deg) scale(1.05);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes starMove {
+
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: 40px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .kpop-card {
+        padding: 25px;
+    }
+
+    .kpop-card h2 {
+        font-size: 28px;
+    }
+
+    .ramen-mini {
+        padding: 15px;
+    }
+
+    .ramen-icon {
+        font-size: 40px;
+    }
+
+}
